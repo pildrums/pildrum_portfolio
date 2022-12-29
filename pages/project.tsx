@@ -1,12 +1,12 @@
 import Layout from "Components/Layout";
 import styled from "styled-components";
 
-interface IHomeProps {}
+interface IprojectProps {}
 
-export default function Home() {
+export default function project() {
   return (
     <Layout>
-      <Wrapper>홈</Wrapper>
+      <Wrapper>프로젝트</Wrapper>
     </Layout>
   );
 }
