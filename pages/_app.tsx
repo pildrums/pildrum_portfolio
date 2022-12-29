@@ -3,7 +3,6 @@ import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "styled-components";
 import { theme } from "styles/theme";
 import GlobalStyle from "styles/GlobalStyle";
-import Layout from "Components/Layout";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (

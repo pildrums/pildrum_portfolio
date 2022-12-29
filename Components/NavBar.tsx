@@ -25,7 +25,14 @@ const Wrapper = styled.nav`
   justify-content: center;
   align-items: center;
   gap: 40px;
+  background: green;
+  padding: 30px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
   .active {
     color: coral;
+    font-weight: 400;
   }
 `;
