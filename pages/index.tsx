@@ -1,4 +1,7 @@
+import About from "Components/Home/About";
+import Intro from "Components/Home/Intro";
 import Layout from "Components/Layout";
+import Seo from "Components/Seo";
 import styled from "styled-components";
 
 interface IHomeProps {}
@@ -6,8 +9,12 @@ interface IHomeProps {}
 export default function Home() {
   return (
     <Layout>
+      <Seo title="홈" />
       <Wrapper>
-        <div>홈</div>
+        <Space />
+        <Intro />
+        <Space />
+        <About />
       </Wrapper>
     </Layout>
   );
@@ -16,17 +23,12 @@ export default function Home() {
 const Wrapper = styled.div`
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  color: #000;
+  color: #fff;
   font-size: 24px;
-  div {
-    width: 400px;
-    height: 400px;
-    background: #fff;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+`;
+
+const Space = styled.div`
+  margin-top: 80px;
 `;

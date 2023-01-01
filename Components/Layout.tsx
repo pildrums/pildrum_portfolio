@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import Navbar from "./NavBar";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
