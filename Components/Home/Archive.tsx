@@ -71,7 +71,7 @@ const Item = styled.div`
   a {
     transition: color 0.3s ease-in-out;
     &:hover {
-      color: ${props => props.theme.orange};
+      color: ${(props) => props.theme.orange};
     }
   }
 `;
