@@ -1,5 +1,8 @@
 import About from "Components/Home/About";
+import Archive from "Components/Home/Archive";
+import Footer from "Components/Home/Footer";
 import Intro from "Components/Home/Intro";
+import Stack from "Components/Home/Stack";
 import Layout from "Components/Layout";
 import Seo from "Components/Seo";
 import styled from "styled-components";
@@ -13,8 +16,10 @@ export default function Home() {
       <Wrapper>
         <Space />
         <Intro />
-        <Space />
         <About />
+        <Stack />
+        <Archive />
+        <Footer />
       </Wrapper>
     </Layout>
   );

@@ -58,8 +58,7 @@ export default function About() {
           <MdMenuBook />
           <AboutItemContent>
             <span>학력</span>
-            <span>호서대학교</span>
-            <span>(시각디자인학과)</span>
+            <span>호서대학교 시각디자인학과</span>
           </AboutItemContent>
         </AboutItem>
       </AboutContent>
@@ -107,7 +106,7 @@ const AboutContent = styled.div`
 
 const AboutItem = styled(motion.div)`
   color: ${(props) => props.theme.black.lighter};
-  padding: 30px 40px;
+  padding: 30px 50px;
   border-radius: 10px;
   font-size: 20px;
   display: flex;
@@ -126,16 +125,13 @@ const AboutItemContent = styled.div`
   gap: 10px;
   span {
     &:first-child {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 800;
-      color: ${(props) => props.theme.green.lighter};
+      color: ${(props) => props.theme.yellow};
       user-select: none;
     }
-    &:nth-child(2) {
-      font-weight: 400;
-      color: ${(props) => props.theme.white.lighter};
-    }
     &:last-child {
+      font-size: 18px;
       font-weight: 400;
       color: ${(props) => props.theme.white.lighter};
     }

@@ -78,7 +78,7 @@ const Nav = styled(motion.nav)`
   z-index: 9999;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   .active {
-    color: coral;
+    color: ${props => props.theme.brown.lighter};
     font-weight: 500;
   }
 `;
@@ -86,7 +86,6 @@ const Nav = styled(motion.nav)`
 const StyledLink = styled(motion.span)`
   position: relative;
   font-weight: 400;
-  /* color: ${(props) => props.theme.white.darker}; */
 `;
 
 const Circle = styled(motion.span)`

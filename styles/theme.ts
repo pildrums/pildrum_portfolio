@@ -11,7 +11,12 @@ export const theme: DefaultTheme = {
     lighter: "#fff",
     darker: "#e5e5e5",
   },
-  green: {
-    lighter: "#b5ff23",
+  green: "#b5ff23",
+  yellow: "#F7C815",
+  orange: "#EC9704",
+  brown: {
+    lighter: "#9C4A1A",
+    veryLighter: "#A78B71",
+    darker: "#583E26",
   },
 };

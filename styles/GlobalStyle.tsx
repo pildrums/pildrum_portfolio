@@ -37,6 +37,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1;
     overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   menu, ol, ul {
@@ -75,5 +80,7 @@ const GlobalStyle = createGlobalStyle`
     color:inherit;
   }
 `;
+
+
 
 export default GlobalStyle;
