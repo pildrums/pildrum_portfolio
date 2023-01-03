@@ -14,13 +14,16 @@ import {
   SiReact,
   SiNextdotjs,
   SiStyledcomponents,
-  SiRedux,
-  SiReduxsaga,
   SiPython,
   SiDjango,
   SiMariadb,
   SiMysql,
   SiAdobexd,
+  SiHeroku,
+  SiFirebase,
+  SiJekyll,
+  SiMongodb,
+  SiFlutter,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 
@@ -30,6 +33,17 @@ export default function Stack() {
   return (
     <Wrapper>
       <Title>Stack</Title>
+      <Status>
+        <StatusList>
+          <span>사용 가능</span>
+          <div></div>
+        </StatusList>
+        |
+        <StatusList>
+          <span>현재 학습 중</span>
+          <div></div>
+        </StatusList>
+      </Status>
       <Content>
         <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Frontend</ListTitle>
@@ -65,14 +79,6 @@ export default function Stack() {
             <FaSass />
             <span>SASS/SCSS</span>
           </Item>
-          <Item>
-            <SiRedux />
-            <span>Redux</span>
-          </Item>
-          <Item>
-            <SiReduxsaga />
-            <span>Redux-Saga</span>
-          </Item>
         </List>
         <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Backend</ListTitle>
@@ -89,12 +95,20 @@ export default function Stack() {
             <span>Django</span>
           </Item>
           <Item>
+            <SiMysql />
+            <span>MySQL</span>
+          </Item>
+          <Item>
             <SiMariadb />
             <span>MariaDB</span>
           </Item>
           <Item>
-            <SiMysql />
-            <span>MySQL</span>
+            <SiMongodb />
+            <span>MongoDB</span>
+          </Item>
+          <Item>
+            <SiFirebase />
+            <span>Firebase</span>
           </Item>
         </List>
         <List variants={listVars} initial="initial" whileHover="hover">
@@ -102,6 +116,10 @@ export default function Stack() {
           <Item>
             <SiReact />
             <span>React Native</span>
+          </Item>
+          <Item>
+            <SiFlutter />
+            <span>Flutter</span>
           </Item>
         </List>
         <List variants={listVars} initial="initial" whileHover="hover">
@@ -123,17 +141,18 @@ export default function Stack() {
           </Item>
           <Item>
             <SiAdobexd />
-            <span>Figma</span>
-          </Item>
-          <Item>
-            <SiAdobexd />
-            <span>Zeplin</span>
+            <span>Adobe XD / Zeplin</span>
           </Item>
         </List>
         <List variants={listVars} initial="initial" whileHover="hover">
-          <ListTitle>Certificate</ListTitle>
+          <ListTitle>Deployment</ListTitle>
           <Item>
-            <span>컴퓨터그래픽스운용기능사</span>
+            <SiHeroku />
+            <span>Heroku</span>
+          </Item>
+          <Item>
+            <SiJekyll />
+            <span>Jekyll</span>
           </Item>
         </List>
       </Content>
@@ -175,6 +194,40 @@ const Title = styled.h1`
   margin-bottom: 40px;
 `;
 
+const Status = styled.div`
+  margin-bottom: 20px;
+  color: ${(props) => props.theme.black.lighter};
+  display: flex;
+  gap: 20px;
+`;
+
+const StatusList = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  div {
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+  }
+  span {
+    &:first-child {
+      font-weight: 400;
+    }
+  }
+  &:first-child {
+    div {
+      background: ${(props) => props.theme.green};
+    }
+  }
+  &:last-child {
+    div {
+      background: ${(props) => props.theme.red};
+    }
+  }
+`;
+
 const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -198,11 +251,11 @@ const Item = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   color: ${(props) => props.theme.black.veryDark};
   margin: 20px 0;
   svg {
-    font-size: 80px;
+    font-size: 60px;
   }
   span {
     font-size: 20px;

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
 
 interface IArchiveProps {}
 
@@ -14,6 +15,13 @@ export default function Archive() {
           <div>
             <span>GitHub</span>
             <Link href="https://github.com/pildrums">바로가기</Link>
+          </div>
+        </Item>
+        <Item>
+          <Image src="/assets/images/velog.jpg" alt="" width={30} height={30} />
+          <div>
+            <span>Velog</span>
+            <Link href="https://velog.io/@pj9211">바로가기</Link>
           </div>
         </Item>
       </Content>
