@@ -8,6 +8,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import styled from "styled-components";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaGithub } from "react-icons/fa";
 
 interface INavbarProps {}
 
@@ -27,6 +29,7 @@ export default function Navbar() {
   return (
     <AnimatePresence>
       <Nav variants={navVars} animate={navAnimation} initial={"top"}>
+        <Logo href="/">Pildrum`s Portfolio</Logo>
         <Link href="/">
           <StyledLink
             animate={navAnimation}
@@ -56,6 +59,17 @@ export default function Navbar() {
             {router.pathname === "/career" && <Circle layoutId="circle" />}
           </StyledLink>
         </Link>
+        <IconList>
+          <IconLink href="https://github.com/pildrums">
+            <FaGithub />
+          </IconLink>
+          <IconLink href="mailto:there7788@gmail.com">
+            <MdOutlineEmail />
+          </IconLink>
+          <IconLink href="https://velog.io/@pj9211">
+            <span>Velog</span>
+          </IconLink>
+        </IconList>
       </Nav>
     </AnimatePresence>
   );
@@ -78,9 +92,40 @@ const Nav = styled(motion.nav)`
   z-index: 9999;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   .active {
-    color: ${props => props.theme.brown.lighter};
+    color: ${(props) => props.theme.brown.lighter};
     font-weight: 500;
   }
+`;
+
+const Logo = styled(Link)`
+  position: absolute;
+  left: 0;
+  margin-left: 50px;
+  font-weight: 400;
+  font-size: 24px;
+`;
+
+const IconList = styled.div`
+  /* background: #000; */
+  position: absolute;
+  right: 0;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  svg {
+    font-size: 30px;
+  }
+  span {
+    font-weight: 400;
+    font-size: 20px;
+  }
+`;
+
+const IconLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledLink = styled(motion.span)`
