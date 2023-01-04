@@ -2,9 +2,9 @@ import Layout from "Components/Layout";
 import Seo from "Components/Seo";
 import styled from "styled-components";
 
-interface IcareerProps {}
+interface ICareerProps {}
 
-export default function career() {
+export default function Career() {
   return (
     <Layout>
       <Seo title="커리어" />
