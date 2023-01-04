@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -35,47 +35,60 @@ export default function Stack() {
       <Title>Stack</Title>
       <Status>
         <StatusList>
-          <span>사용 가능</span>
-          <div></div>
+          <span>80 ~ 100%(학습 완료)</span>
+          <Circle green />
         </StatusList>
         |
         <StatusList>
-          <span>현재 학습 중</span>
-          <div></div>
+          <span>40 ~ 80%(학습 중)</span>
+          <Circle yellow />
+        </StatusList>
+        |
+        <StatusList>
+          <span>0 ~ 40%(학습 시작)</span>
+          <Circle red />
         </StatusList>
       </Status>
       <Content>
         <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Frontend</ListTitle>
           <Item>
+            <Circle green />
             <FaHtml5 />
             <span>HTML5</span>
           </Item>
           <Item>
+            <Circle green />
             <FaCss3Alt />
             <span>CSS3</span>
           </Item>
           <Item>
+            <Circle yellow />
             <SiJavascript />
             <span>JavaScript</span>
           </Item>
           <Item>
+            <Circle yellow />
             <SiTypescript />
             <span>TypeScript</span>
           </Item>
           <Item>
+            <Circle green />
             <SiReact />
             <span>React.js</span>
           </Item>
           <Item>
+            <Circle yellow />
             <SiNextdotjs />
             <span>Next.js</span>
           </Item>
           <Item>
+            <Circle green />
             <SiStyledcomponents />
             <span>Styled-Components</span>
           </Item>
           <Item>
+            <Circle green />
             <FaSass />
             <span>SASS/SCSS</span>
           </Item>
@@ -83,30 +96,37 @@ export default function Stack() {
         <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Backend</ListTitle>
           <Item>
+            <Circle red />
             <FaNodeJs />
             <span>Node.JS</span>
           </Item>
           <Item>
+            <Circle red />
             <SiPython />
             <span>Python</span>
           </Item>
           <Item>
+            <Circle red />
             <SiDjango />
             <span>Django</span>
           </Item>
           <Item>
+            <Circle red />
             <SiMysql />
             <span>MySQL</span>
           </Item>
           <Item>
+            <Circle red />
             <SiMariadb />
             <span>MariaDB</span>
           </Item>
           <Item>
+            <Circle red />
             <SiMongodb />
             <span>MongoDB</span>
           </Item>
           <Item>
+            <Circle yellow />
             <SiFirebase />
             <span>Firebase</span>
           </Item>
@@ -114,10 +134,12 @@ export default function Stack() {
         <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Mobile App</ListTitle>
           <Item>
+            <Circle yellow />
             <SiReact />
             <span>React Native</span>
           </Item>
           <Item>
+            <Circle red />
             <SiFlutter />
             <span>Flutter</span>
           </Item>
@@ -125,10 +147,12 @@ export default function Stack() {
         <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Version Management</ListTitle>
           <Item>
+            <Circle green />
             <FaGithub />
             <span>GitHub</span>
           </Item>
           <Item>
+            <Circle green />
             <FaGit />
             <span>Git</span>
           </Item>
@@ -136,10 +160,12 @@ export default function Stack() {
         <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Communication</ListTitle>
           <Item>
+            <Circle green />
             <FaFigma />
             <span>Figma</span>
           </Item>
           <Item>
+            <Circle green />
             <SiAdobexd />
             <span>Adobe XD / Zeplin</span>
           </Item>
@@ -147,12 +173,14 @@ export default function Stack() {
         <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Deployment</ListTitle>
           <Item>
+            <Circle red />
             <SiHeroku />
             <span>Heroku</span>
           </Item>
           <Item>
+            <Circle yellow />
             <SiJekyll />
-            <span>Jekyll</span>
+            <span>Jekyll / Github Pages</span>
           </Item>
         </List>
       </Content>
@@ -166,7 +194,7 @@ const listVars = {
   },
   hover: {
     y: -15,
-    boxShadow: "2px 4px 20px rgba(0, 0, 0, 0.3)",
+    boxShadow: "2px 4px 20px rgba(0, 0, 0, 0.5)",
     transition: {
       damping: 0,
       stiffness: 10,
@@ -195,7 +223,7 @@ const Title = styled.h1`
 `;
 
 const Status = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: ${(props) => props.theme.black.lighter};
   display: flex;
   gap: 20px;
@@ -208,22 +236,12 @@ const StatusList = styled.div`
   div {
     width: 20px;
     height: 20px;
-    background: #000;
     border-radius: 50%;
   }
   span {
     &:first-child {
       font-weight: 400;
-    }
-  }
-  &:first-child {
-    div {
-      background: ${(props) => props.theme.green};
-    }
-  }
-  &:last-child {
-    div {
-      background: ${(props) => props.theme.red};
+      font-size: 18px;
     }
   }
 `;
@@ -236,14 +254,14 @@ const Content = styled.div`
 
 const List = styled(motion.div)`
   padding: 30px 50px;
-  background: ${(props) => props.theme.white.lighter};
+  background: ${(props) => props.theme.black.lighter};
   border-radius: 10px;
 `;
 
 const ListTitle = styled.h2`
   font-weight: 400;
-  color: ${(props) => props.theme.brown.lighter};
-  border-bottom: 1px solid ${(props) => props.theme.brown.veryLighter};
+  color: ${(props) => props.theme.yellow};
+  border-bottom: 1px solid ${(props) => props.theme.yellow};
   user-select: none;
 `;
 
@@ -252,7 +270,7 @@ const Item = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  color: ${(props) => props.theme.black.veryDark};
+  color: ${(props) => props.theme.white.lighter};
   margin: 20px 0;
   svg {
     font-size: 60px;
@@ -261,5 +279,27 @@ const Item = styled.div`
     font-size: 20px;
     font-weight: 500;
     user-select: none;
+    color: ${props => props.theme.white.darker};
   }
+`;
+
+const Circle = styled.div<{ green?: boolean; yellow?: boolean; red?: boolean }>`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  ${(props) =>
+    props.green &&
+    css`
+      background: ${props.theme.green};
+    `}
+  ${(props) =>
+    props.yellow &&
+    css`
+      background: ${props.theme.yellow};
+    `}
+  ${(props) =>
+    props.red &&
+    css`
+      background: ${props.theme.red};
+    `}
 `;
