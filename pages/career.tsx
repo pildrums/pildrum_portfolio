@@ -1,5 +1,6 @@
 import Layout from "Components/Layout";
 import Seo from "Components/Seo";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 interface ICareerProps {}
@@ -17,9 +18,7 @@ const Info = [
     title: "창업 정보제공 플랫폼 Project-B(가칭)",
     period: "2021.03 ~ 2021.07",
     description: `
-    IT창업자들을 위한 정보제공 플랫폼 Project-B 서비스 개발
-    Web: React(JavaScript) - 기여도 80%
-    App: React-Native(JavaScript / Expo) - 기여도 60%
+    IT창업자들을 위한 정보제공 플랫폼 Project-B 서비스 개발 (Web / App) - 기여도 60%
     `,
   },
   {
@@ -38,18 +37,28 @@ export default function Career() {
       <Wrapper>
         <Title>Career</Title>
         <List>
+          <CompanyTitle>(주) AI4Blockchain</CompanyTitle>
           {Info.map((item) => (
-            <Item key={item.id}>
-              <h1>{item.title}</h1>
-              <span>{item.period}</span>
-              <span>{item.description}</span>
-            </Item>
+            <>
+              <Item variants={itemVars} whileHover="hover" key={item.id}>
+                <h1>{item.title}</h1>
+                <span>{item.period}</span>
+                <span>{item.description}</span>
+              </Item>
+              <Line />
+            </>
           ))}
         </List>
       </Wrapper>
     </Layout>
   );
 }
+
+const itemVars = {
+  hover: {
+    x: 20,
+  },
+};
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -82,9 +91,38 @@ const List = styled.div`
   padding: 0 30px;
 `;
 
-const Item = styled.div`
+const CompanyTitle = styled.h1`
+  color: ${(props) => props.theme.yellow.lighter};
+  font-weight: 400;
+  font-size: 26px;
+  border-bottom: 1px solid ${(props) => props.theme.yellow.darker};
+  line-height: 60px;
+`;
+
+const Item = styled(motion.div)`
   background: #fff;
-  padding: 32px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
+  border-radius: 4px;
+  gap: 20px;
+  h1 {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  span {
+    font-size: 18px;
+    font-weight: 400;
+    &:last-child {
+      font-weight: 100;
+      font-size: 16px;
+    }
+  }
+`;
+
+const Line = styled.div`
+  width: 100%;
+  height: 1px;
+  background: ${(props) => props.theme.white.lighter};
+  opacity: 0.2;
 `;
