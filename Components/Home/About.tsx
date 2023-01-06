@@ -91,7 +91,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 40px;
-  border-bottom: 1px solid ${(props) => props.theme.black.veryDark};
+  border-bottom: 4px solid ${(props) => props.theme.black.veryDark};
   color: ${(props) => props.theme.black.darker};
   font-weight: 600;
   height: 56px;
@@ -127,11 +127,11 @@ const AboutItemContent = styled.div`
     &:first-child {
       font-size: 16px;
       font-weight: 800;
-      color: ${(props) => props.theme.yellow};
+      color: ${(props) => props.theme.yellow.lighter};
       user-select: none;
     }
     &:last-child {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 400;
       color: ${(props) => props.theme.white.lighter};
     }

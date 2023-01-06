@@ -12,9 +12,14 @@ declare module "styled-components" {
       darker: string;
       lighter: string;
     };
-    green: string;
-    yellow: string;
-    orange: string;
+    green: {
+      lighter: string;
+      darker: string;
+    };
+    yellow: {
+      lighter: string;
+      darker: string;
+    };
     brown: {
       lighter: string;
       veryLighter: string;

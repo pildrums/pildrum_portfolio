@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-size: 40px;
   font-weight: 500;
-  color: ${(props) => props.theme.yellow};
+  color: ${(props) => props.theme.yellow.lighter};
   margin-bottom: 40px;
   user-select: none;
 `;
@@ -48,7 +48,7 @@ const Description = styled.div`
 const Underline = styled.div`
   width: 40px;
   height: 4px;
-  background: ${props => props.theme.yellow};
+  background: ${props => props.theme.yellow.lighter};
   margin: 40px 0;
 `;
 

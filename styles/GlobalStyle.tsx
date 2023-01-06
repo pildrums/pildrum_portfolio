@@ -72,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Source Sans Pro', sans-serif;
     color: ${(props) => props.theme.black.veryDark};
     line-height: 1.2;
-    background: #e6e6e6;
+    background: ${props => props.theme.white.lighter};
   }
 
   a {

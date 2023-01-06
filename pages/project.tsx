@@ -3,9 +3,14 @@ import Seo from "Components/Seo";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface IProjectProps {}
+
+interface IItemButton {
+  green?: boolean;
+  yellow?: boolean;
+}
 
 const INFO = [
   {
@@ -17,7 +22,7 @@ const INFO = [
       " 리액트의 심화과정을 공부하고 처음 직접 작업한 맥도날드 랜딩페이지입니다. 이 프로젝트를 통해서 컴포넌트 리팩토링의 중요성을 배웠습니다. 리액트를 제대로 배우기 위해서 최대한 라이브러리의 도움없이 오직 구글링과 저의 리액트 기본 지식으로만 만들어습니다. 기존의 작업방식의 문제점들을 고칠 수 있었던 소중한 프로젝트입니다. 추후에 UI 개선 및 다른 페이지의 작업도 기획 중입니다.",
     periods: " 2021.12.25 ~ 2022.02.05",
     stack: " React(JS) / Styled-Components",
-    img: "assets/",
+    img: "assets/mcdonald.png",
   },
   {
     id: 2,
@@ -37,7 +42,7 @@ export default function Project() {
     <Layout>
       <Seo title="프로젝트" />
       <Wrapper>
-        <Title>프로젝트</Title>
+        <Title>Project</Title>
         <List>
           {INFO.map((item) => (
             <Item
@@ -46,16 +51,20 @@ export default function Project() {
               exit="exit"
               key={item.id}
             >
-              <ItemTitle>{item.title}</ItemTitle>
               <ItemImage bgimage={item.img}>
                 <ItemContainer>
                   <Overlay>
+                    <ItemTitle>{item.title}</ItemTitle>
                     <span>• {item.description}</span>
                     <span>• 제작기간: {item.periods}</span>
                     <span>• {item.stack}</span>
                     <ItemButtonContainer>
-                      <ItemButton href={item.url}>바로가기</ItemButton>
-                      <ItemButton href={item.git}>Github</ItemButton>
+                      <ItemButton green href={item.url}>
+                        바로가기
+                      </ItemButton>
+                      <ItemButton yellow href={item.git}>
+                        Github
+                      </ItemButton>
                     </ItemButtonContainer>
                   </Overlay>
                 </ItemContainer>
@@ -83,13 +92,13 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${(props) => props.theme.orange};
+  background: ${(props) => props.theme.yellow.darker};
   padding-bottom: 120px;
 `;
 
 const Title = styled.h1`
   font-size: 40px;
-  border-bottom: 1px solid ${(props) => props.theme.black.veryDark};
+  border-bottom: 4px solid ${(props) => props.theme.black.veryDark};
   color: ${(props) => props.theme.black.darker};
   font-weight: 600;
   margin-top: 120px;
@@ -101,6 +110,9 @@ const List = styled.div`
   grid-template-columns: repeat(1, 1fr);
   gap: 40px;
   margin-top: 40px;
+  @media all and (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const Item = styled(motion.div)`
@@ -115,7 +127,8 @@ const Item = styled(motion.div)`
 
 const ItemTitle = styled.h2`
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 600;
+  color: ${props => props.theme.white.lighter};
 `;
 
 const ItemImage = styled.div<{ bgimage: string }>`
@@ -168,9 +181,28 @@ const ItemButtonContainer = styled.div`
   margin-top: 20px;
 `;
 
-const ItemButton = styled(Link)`
+const ItemButton = styled(Link)<IItemButton>`
   background: ${(props) => props.theme.black.darker};
   padding: 8px 16px;
-  color: #fff;
+  color: ${(props) => props.theme.black.darker};
   font-size: 18px;
+  font-weight: 400;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 10px;
+  ${(props) =>
+    props.green &&
+    css`
+      background: ${props.theme.green.lighter};
+      &:hover {
+        background: ${props.theme.green.darker};
+      }
+    `}
+  ${(props) =>
+    props.yellow &&
+    css`
+      background: ${props.theme.yellow.lighter};
+      &:hover {
+        background: ${props.theme.yellow.darker};
+      }
+    `}
 `;

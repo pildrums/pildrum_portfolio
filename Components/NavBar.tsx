@@ -101,12 +101,11 @@ const Logo = styled(Link)`
   position: absolute;
   left: 0;
   margin-left: 50px;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 24px;
 `;
 
 const IconList = styled.div`
-  /* background: #000; */
   position: absolute;
   right: 0;
   margin-right: 50px;
@@ -114,11 +113,23 @@ const IconList = styled.div`
   align-items: center;
   gap: 20px;
   svg {
+    transition: opacity 0.3s ease-in-out;
     font-size: 30px;
+    color: ${(props) => props.theme.black.darker};
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
   }
   span {
-    font-weight: 400;
+    transition: opacity 0.3s ease-in-out;
+    font-weight: 600;
     font-size: 20px;
+    color: ${(props) => props.theme.black.darker};
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 

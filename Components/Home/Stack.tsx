@@ -210,7 +210,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: ${(props) => props.theme.orange};
+  background: ${(props) => props.theme.yellow.darker};
 `;
 
 const Title = styled.h1`
@@ -260,9 +260,10 @@ const List = styled(motion.div)`
 
 const ListTitle = styled.h2`
   font-weight: 400;
-  color: ${(props) => props.theme.yellow};
-  border-bottom: 1px solid ${(props) => props.theme.yellow};
+  color: ${(props) => props.theme.yellow.lighter};
+  border-bottom: 1px solid ${(props) => props.theme.yellow.darker};
   user-select: none;
+  line-height: 50px;
 `;
 
 const Item = styled.div`
@@ -290,12 +291,12 @@ const Circle = styled.div<{ green?: boolean; yellow?: boolean; red?: boolean }>`
   ${(props) =>
     props.green &&
     css`
-      background: ${props.theme.green};
+      background: ${props.theme.green.lighter};
     `}
   ${(props) =>
     props.yellow &&
     css`
-      background: ${props.theme.yellow};
+      background: ${props.theme.yellow.lighter};
     `}
   ${(props) =>
     props.red &&
