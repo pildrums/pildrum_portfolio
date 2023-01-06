@@ -41,6 +41,7 @@ export default function Project() {
   return (
     <Layout>
       <Seo title="프로젝트" />
+      <Space />
       <Wrapper>
         <Title>Project</Title>
         <List>
@@ -93,7 +94,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background: ${(props) => props.theme.yellow.darker};
-  padding-bottom: 120px;
+  padding-bottom: 140px;
+`;
+
+const Space = styled.div`
+  margin-top: 80px;
 `;
 
 const Title = styled.h1`
@@ -101,8 +106,8 @@ const Title = styled.h1`
   border-bottom: 4px solid ${(props) => props.theme.black.veryDark};
   color: ${(props) => props.theme.black.darker};
   font-weight: 600;
-  margin-top: 120px;
-  margin-bottom: 40px;
+  margin-top: 40px;
+  /* margin-bottom: 40px; */
 `;
 
 const List = styled.div`
