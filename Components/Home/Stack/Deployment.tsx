@@ -2,8 +2,6 @@ import styled, { css } from "styled-components";
 import { SiHeroku, SiJekyll } from "react-icons/si";
 import { motion } from "framer-motion";
 
-interface IBackendProps {}
-
 const STACK = [
   {
     id: 1,

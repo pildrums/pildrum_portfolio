@@ -9,58 +9,64 @@ import {
 } from "react-icons/md";
 import { motion } from "framer-motion";
 
-interface IAboutProps {}
-
-// AboutItem에 들어갈 내용은 array 형태로 만든 후,
-// map 메서드 이용예정
+const ABOUT = [
+  {
+    id: 1,
+    icon: <MdFace />,
+    title: "이름",
+    content: "김필진",
+  },
+  {
+    id: 2,
+    icon: <MdCalendarToday />,
+    title: "생년월일",
+    content: "92.07.31",
+  },
+  {
+    id: 3,
+    icon: <MdLocationOn />,
+    title: "주소지",
+    content: "경기도 안산시",
+  },
+  {
+    id: 4,
+    icon: <MdPhone />,
+    title: "연락처",
+    content: "010.4721.6470",
+  },
+  {
+    id: 5,
+    icon: <MdOutlineEmail />,
+    title: "이메일",
+    content: "there7788@gmail.com",
+  },
+  {
+    id: 6,
+    icon: <MdMenuBook />,
+    title: "학력",
+    content: "호서대학교 시각디자인학과",
+  },
+];
 
 export default function About() {
   return (
     <Wrapper>
       <Title>About Me</Title>
       <AboutContent>
-        <AboutItem variants={itemVars} initial="initial" whileHover="hover">
-          <MdFace />
-          <AboutItemContent>
-            <span>이름</span>
-            <span>김필진</span>
-          </AboutItemContent>
-        </AboutItem>
-        <AboutItem variants={itemVars} initial="initial" whileHover="hover">
-          <MdCalendarToday />
-          <AboutItemContent>
-            <span>생년월일</span>
-            <span>92.07.31</span>
-          </AboutItemContent>
-        </AboutItem>
-        <AboutItem variants={itemVars} initial="initial" whileHover="hover">
-          <MdLocationOn />
-          <AboutItemContent>
-            <span>주소지</span>
-            <span>경기도 안산시</span>
-          </AboutItemContent>
-        </AboutItem>
-        <AboutItem variants={itemVars} initial="initial" whileHover="hover">
-          <MdPhone />
-          <AboutItemContent>
-            <span>연락처</span>
-            <span>010.4721.6470</span>
-          </AboutItemContent>
-        </AboutItem>
-        <AboutItem variants={itemVars} initial="initial" whileHover="hover">
-          <MdOutlineEmail />
-          <AboutItemContent>
-            <span>이메일</span>
-            <span>there7788@gmail.com</span>
-          </AboutItemContent>
-        </AboutItem>
-        <AboutItem variants={itemVars} initial="initial" whileHover="hover">
-          <MdMenuBook />
-          <AboutItemContent>
-            <span>학력</span>
-            <span>호서대학교 시각디자인학과</span>
-          </AboutItemContent>
-        </AboutItem>
+        {ABOUT.map((item) => (
+          <AboutItem
+            variants={itemVars}
+            initial="initial"
+            whileHover="hover"
+            key={item.id}
+          >
+            {item.icon}
+            <AboutItemContent>
+              <span>{item.title}</span>
+              <span>{item.content}</span>
+            </AboutItemContent>
+          </AboutItem>
+        ))}
       </AboutContent>
     </Wrapper>
   );

@@ -2,8 +2,6 @@ import styled, { css } from "styled-components";
 import { FaGithub, FaGit } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-interface IBackendProps {}
-
 const STACK = [
   {
     id: 1,

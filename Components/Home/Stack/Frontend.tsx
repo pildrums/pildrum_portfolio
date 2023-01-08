@@ -9,8 +9,6 @@ import {
   SiStyledcomponents,
 } from "react-icons/si";
 
-interface IFrontendProps {}
-
 const STACK = [
   {
     id: 1,

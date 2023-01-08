@@ -1,11 +1,8 @@
 import Layout from "Components/Layout";
 import Seo from "Components/Seo";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import styled, { css } from "styled-components";
-
-interface IProjectProps {}
 
 interface IItemButton {
   green?: boolean;
@@ -95,6 +92,9 @@ const Wrapper = styled.div`
   align-items: center;
   background: ${(props) => props.theme.yellow.darker};
   padding-bottom: 140px;
+  @media all and (min-width: 1024px) {
+    height: 100vh;
+  }
 `;
 
 const Space = styled.div`
@@ -107,7 +107,6 @@ const Title = styled.h1`
   color: ${(props) => props.theme.black.darker};
   font-weight: 600;
   margin-top: 40px;
-  /* margin-bottom: 40px; */
 `;
 
 const List = styled.div`
