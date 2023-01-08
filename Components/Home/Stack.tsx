@@ -47,8 +47,8 @@ export default function Stack() {
       </Status>
       <Content>
         <Frontend />
-        <Backend />
-        <MobileApp />
+        {/* <Backend /> */}
+        {/* <MobileApp /> */}
         <Version />
         <Communication />
         <Deployment />
