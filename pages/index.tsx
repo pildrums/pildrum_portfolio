@@ -5,8 +5,6 @@ import Layout from "Components/Layout";
 import Seo from "Components/Seo";
 import styled from "styled-components";
 
-interface IHomeProps {}
-
 export default function Home() {
   return (
     <Layout>

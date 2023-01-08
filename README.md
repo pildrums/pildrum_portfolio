@@ -1,6 +1,14 @@
 # 김필진 포트폴리오
 
+## 개선 완료
+1. mediaQuery를 활용해서 Responsive Page 구현
+2. 모든 Component Refactoring 완료
+
 ## 개선점
 
-1. Intro component의 description 부분 코드를 좀 더 명료하게 바꿔야 함
-2. About Component Refactoting
+1. nav에 특정 라우팅 시 나타나는 빨간 점 -> 스크롤될 시 동작이 이상함
+2. 단조로운 애니메이션 -> 불편하지 않는 선에서 다이나믹하게 변경 필요
+3. 전체 UI에서 모든 요소들 간격 조정 필요
+4. SSR 구현
+5. 메인페이지 이미지 변경
+6. 포트폴리오에 프로젝트가 추가될 수 있음을 알리는 Modal 작성

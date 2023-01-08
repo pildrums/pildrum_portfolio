@@ -44,7 +44,7 @@ const ABOUT = [
     id: 6,
     icon: <MdMenuBook />,
     title: "학력",
-    content: "호서대학교 시각디자인학과",
+    content: "신성대학교 시각디자인과",
   },
 ];
 
