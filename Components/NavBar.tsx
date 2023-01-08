@@ -102,7 +102,7 @@ const Nav = styled(motion.nav)`
   width: 1320px;
   .active {
     color: ${(props) => props.theme.black.veryDark};
-    font-weight: 400;
+    font-weight: 600;
   }
 `;
 
@@ -128,16 +128,6 @@ const IconList = styled.div`
   svg {
     transition: opacity 0.3s ease-in-out;
     font-size: 30px;
-    color: ${(props) => props.theme.black.darker};
-    opacity: 0.5;
-    &:hover {
-      opacity: 1;
-    }
-  }
-  span {
-    transition: opacity 0.3s ease-in-out;
-    font-weight: 600;
-    font-size: 20px;
     color: ${(props) => props.theme.black.darker};
     opacity: 0.5;
     &:hover {
