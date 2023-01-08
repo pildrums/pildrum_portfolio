@@ -30,7 +30,7 @@ export default function Navbar() {
     <AnimatePresence>
       <Wrapper variants={headerVars} animate={navAnimation} initial={"top"}>
         <Nav>
-          <Logo href="/">Pildrum`s Portfolio</Logo>
+          <Logo href="/" logo="assets/logo.png" />
           <LinkContainer>
             <Link href="/">
               <StyledLink
@@ -69,9 +69,6 @@ export default function Navbar() {
             <IconLink href="mailto:there7788@gmail.com">
               <MdOutlineEmail />
             </IconLink>
-            <IconLink href="https://velog.io/@pj9211">
-              <span>Velog</span>
-            </IconLink>
           </IconList>
         </Nav>
       </Wrapper>
@@ -101,7 +98,7 @@ const Nav = styled(motion.nav)`
   justify-content: space-between;
   align-items: center;
   gap: 40px;
-  padding: 30px 0;
+  padding: 0;
   width: 1320px;
   .active {
     color: ${(props) => props.theme.black.veryDark};
@@ -109,9 +106,13 @@ const Nav = styled(motion.nav)`
   }
 `;
 
-const Logo = styled(Link)`
-  font-weight: 600;
-  font-size: 24px;
+const Logo = styled(Link)<{ logo: string }>`
+  background-image: url(${(props) => props.logo});
+  width: 80px;
+  height: 80px;
+  margin: 8px 0;
+  background-position: center;
+  background-size: cover;
 `;
 
 const LinkContainer = styled.div`
