@@ -18,7 +18,7 @@ const Info = [
     title: "창업 정보제공 플랫폼 Project-B(가칭)",
     period: "2021.03 ~ 2021.07",
     description: `
-    IT창업자들을 위한 정보제공 플랫폼 Project-B 서비스 개발 (Web / App) - 기여도 60%
+    IT창업자들을 위한 정보제공 플랫폼 Project-B 프론트엔드 개발 (Web / App) - 기여도 60%
     `,
   },
   {

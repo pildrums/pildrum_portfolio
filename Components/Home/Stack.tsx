@@ -26,6 +26,7 @@ import {
   SiFlutter,
 } from "react-icons/si";
 import { motion } from "framer-motion";
+import Frontend from "./Stack/Frontend";
 
 interface IStackProps {}
 
@@ -50,7 +51,8 @@ export default function Stack() {
         </StatusList>
       </Status>
       <Content>
-        <List variants={listVars} initial="initial" whileHover="hover">
+        <Frontend />
+        {/* <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Frontend</ListTitle>
           <Item>
             <Circle green />
@@ -92,7 +94,7 @@ export default function Stack() {
             <FaSass />
             <span>SASS/SCSS</span>
           </Item>
-        </List>
+        </List> */}
         <List variants={listVars} initial="initial" whileHover="hover">
           <ListTitle>Backend</ListTitle>
           <Item>
@@ -280,7 +282,7 @@ const Item = styled.div`
     font-size: 20px;
     font-weight: 500;
     user-select: none;
-    color: ${props => props.theme.white.darker};
+    color: ${(props) => props.theme.white.darker};
   }
 `;
 

@@ -133,7 +133,7 @@ const Item = styled(motion.div)`
 const ItemTitle = styled.h2`
   font-size: 28px;
   font-weight: 600;
-  color: ${props => props.theme.white.lighter};
+  color: ${(props) => props.theme.white.lighter};
 `;
 
 const ItemImage = styled.div<{ bgimage: string }>`

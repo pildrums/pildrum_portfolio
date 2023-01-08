@@ -3,27 +3,19 @@ import styled from "styled-components";
 interface IIntroProps {}
 
 export default function Intro() {
-  return (
-    <Wrapper>
-      <Title>김필진 포트폴리오</Title>
-      <Description>
-        <span>Frontend Enginner의 표준이 되고 싶은</span>
-        <span>개발자 김필진입니다.</span>
-      </Description>
-      <Underline />
-      <StyledButton>알아보기</StyledButton>
-    </Wrapper>
-  );
+  return <Wrapper bgphoto="assets/intro-image.png" />;
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ bgphoto: string }>`
   width: 100%;
-  padding: 120px;
+  padding: 250px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: ${(props) => props.theme.brown.lighter};
+  background-image: url(${(props) => props.bgphoto});
+  background-position: center;
 `;
 
 const Title = styled.h1`
@@ -48,7 +40,7 @@ const Description = styled.div`
 const Underline = styled.div`
   width: 40px;
   height: 4px;
-  background: ${props => props.theme.yellow.lighter};
+  background: ${(props) => props.theme.yellow.lighter};
   margin: 40px 0;
 `;
 
