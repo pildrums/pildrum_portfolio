@@ -1,87 +1,80 @@
-import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
-import { FaHtml5, FaCss3Alt, FaSass } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
 import {
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiStyledcomponents,
+  SiPython,
+  SiDjango,
+  SiMariadb,
+  SiMysql,
+  SiFirebase,
+  SiMongodb,
 } from "react-icons/si";
+import { motion } from "framer-motion";
 
-interface IFrontendProps {}
+interface IBackendProps {}
 
 const STACK = [
   {
     id: 1,
-    title: "HTML5",
-    green: true,
+    title: "Node.JS",
+    green: false,
     yellow: false,
-    red: false,
-    icon: <FaHtml5 />,
+    red: true,
+    icon: <FaNodeJs />,
   },
   {
     id: 2,
-    title: "CSS3",
-    green: true,
+    title: "Python",
+    green: false,
     yellow: false,
-    red: false,
-    icon: <FaCss3Alt />,
+    red: true,
+    icon: <SiPython />,
   },
   {
     id: 3,
-    title: "JavaScript",
+    title: "Django",
     green: false,
-    yellow: true,
-    red: false,
-    icon: <SiJavascript />,
+    yellow: false,
+    red: true,
+    icon: <SiDjango />,
   },
   {
     id: 4,
-    title: "TypeScript",
+    title: "MySQL",
     green: false,
-    yellow: true,
-    red: false,
-    icon: <SiTypescript />,
+    yellow: false,
+    red: true,
+    icon: <SiMysql />,
   },
   {
     id: 5,
-    title: "React.js",
-    green: true,
+    title: "MariaDB",
+    green: false,
     yellow: false,
-    red: false,
-    icon: <SiReact />,
+    red: true,
+    icon: <SiMariadb />,
   },
   {
     id: 6,
-    title: "Next.js",
+    title: "MongoDB",
     green: false,
-    yellow: true,
-    red: false,
-    icon: <SiNextdotjs />,
+    yellow: false,
+    red: true,
+    icon: <SiMongodb />,
   },
   {
     id: 7,
-    title: "Styled-Components",
-    green: true,
-    yellow: false,
+    title: "Firebase",
+    green: false,
+    yellow: true,
     red: false,
-    icon: <SiStyledcomponents />,
-  },
-  {
-    id: 8,
-    title: "SASS/SCSS",
-    green: true,
-    yellow: false,
-    red: false,
-    icon: <FaSass />,
+    icon: <SiFirebase />,
   },
 ];
 
-export default function Frontend() {
+export default function Backend() {
   return (
     <List variants={listVars} initial="initial" whileHover="hover">
-      <ListTitle>Frontend</ListTitle>
+      <ListTitle>Backend</ListTitle>
       {STACK.map((item) => (
         <Item key={item.id}>
           <Circle green={item.green} yellow={item.yellow} red={item.red} />

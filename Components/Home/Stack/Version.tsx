@@ -1,87 +1,32 @@
-import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
-import { FaHtml5, FaCss3Alt, FaSass } from "react-icons/fa";
-import {
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiStyledcomponents,
-} from "react-icons/si";
+import { FaGithub, FaGit } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-interface IFrontendProps {}
+interface IBackendProps {}
 
 const STACK = [
   {
     id: 1,
-    title: "HTML5",
+    title: "Git",
     green: true,
     yellow: false,
     red: false,
-    icon: <FaHtml5 />,
+    icon: <FaGit />,
   },
   {
     id: 2,
-    title: "CSS3",
+    title: "Github",
     green: true,
     yellow: false,
     red: false,
-    icon: <FaCss3Alt />,
-  },
-  {
-    id: 3,
-    title: "JavaScript",
-    green: false,
-    yellow: true,
-    red: false,
-    icon: <SiJavascript />,
-  },
-  {
-    id: 4,
-    title: "TypeScript",
-    green: false,
-    yellow: true,
-    red: false,
-    icon: <SiTypescript />,
-  },
-  {
-    id: 5,
-    title: "React.js",
-    green: true,
-    yellow: false,
-    red: false,
-    icon: <SiReact />,
-  },
-  {
-    id: 6,
-    title: "Next.js",
-    green: false,
-    yellow: true,
-    red: false,
-    icon: <SiNextdotjs />,
-  },
-  {
-    id: 7,
-    title: "Styled-Components",
-    green: true,
-    yellow: false,
-    red: false,
-    icon: <SiStyledcomponents />,
-  },
-  {
-    id: 8,
-    title: "SASS/SCSS",
-    green: true,
-    yellow: false,
-    red: false,
-    icon: <FaSass />,
+    icon: <FaGithub />,
   },
 ];
 
-export default function Frontend() {
+export default function Version() {
   return (
     <List variants={listVars} initial="initial" whileHover="hover">
-      <ListTitle>Frontend</ListTitle>
+      <ListTitle>Version Management</ListTitle>
       {STACK.map((item) => (
         <Item key={item.id}>
           <Circle green={item.green} yellow={item.yellow} red={item.red} />
