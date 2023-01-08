@@ -32,6 +32,17 @@ const INFO = [
     stack: "React(TS) / Styled-Components / Framer-Motion / React-Query",
     img: "assets/pilflix.png",
   },
+  {
+    id: 3,
+    title: "포트폴리오",
+    git: "https://github.com/pildrums/pildrum_portfolio",
+    url: "https://pildrums.github.io/pildrum_portfolio/",
+    description:
+      "Next.js로 만든 포트폴리오입니다. Pilflix를 작업하면서 배웠던 기술들을 Next.js에 적용하기 위해 공부하면서 만들었습니다. 프로젝트 안에서 페이지가 전환되었을 때의 애니메이션을 적용했고, 처음 제작했을 때 컴포넌트 구조가 복잡하여 이를 해결하기 위해 리팩토링도 진행했습니다. 사이드 프로젝트가 만들어 질 때마다 프로젝트를 지속적으로 추가할 예정입니다.",
+    periods: "2022.12.13 ~ 2022.12.29",
+    stack: "Next.js(TS) / Styled-Components / Framer-Motion",
+    img: "assets/portfolio.png",
+  },
 ];
 
 export default function Project() {
